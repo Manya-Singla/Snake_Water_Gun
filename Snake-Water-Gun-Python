@@ -1,0 +1,49 @@
+print("Welcome to Snake Water Gun Game\n")
+
+import random
+
+choices = ["snake", "water", "gun"]
+rounds = 10
+c_score = 0
+u_score = 0
+round_left = 0
+
+while round_left < rounds:
+    user = input("Select s for snake, w for water and g for gun: ")
+    comp = random.choice(choices)
+    
+    
+    if comp == "snake" and user == "w":
+        c_score = c_score + 1
+        print("Computer chose " + comp +" and Computer won!!")
+    elif comp == "water" and user == "s":
+        u_score = u_score + 1
+        print("Computer chose " + comp + " and You won!!")
+    elif comp == "snake" and user == "g":
+        u_score = u_score + 1
+        print("Computer chose " + comp + " and You won!!")
+    elif comp == "gun" and user == "s":
+        c_score = c_score + 1
+        print("Computer chose " + comp + " and Computer won!!")
+    elif comp == "water" and user == "g":
+        c_score = c_score + 1
+        print("Computer chose " + comp + " and Computer won!!")
+    elif comp == "gun" and user == "w":
+        u_score = u_score + 1
+        print("Computer chose " + comp + " and You won!!")
+    else:
+        print("Computer chose " + comp + " and It's a tie")
+        
+    round_left = round_left + 1
+    print(f"Rounds left {rounds-round_left} \n")
+        
+    print(f"Computer score = {c_score}")
+    print(f"Your score = {u_score} \n")
+print("Game over")
+if(c_score>u_score):
+    print("OOps!! You lose")
+elif c_score<u_score:
+    print("Yeaaahhh!! You won")
+else:
+    print("It's a tie")
+    
